@@ -27,6 +27,11 @@ public class MainIndicadores {
         /* se obtiene el objeto JSON a partir de un reader creado desde un bjeto stream que se obtiene a partir de la URL*/
         InputStream entrada = url.openStream();
         JsonReader reader = Json.createReader(entrada);
-        JsonObject objeto= reader.readObject();        
+        JsonObject objeto= reader.readObject();  
+        
+        double valorUF = Double.parseDouble(objeto.getJsonObject("uf").get("valor").toString());
+        System.out.println("Valor UF : "+ valorUF);
+        System.out.println("JSON Consumido");
+        
     }
 }
